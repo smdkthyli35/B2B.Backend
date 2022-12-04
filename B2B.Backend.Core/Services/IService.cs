@@ -5,19 +5,19 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace B2B.Backend.Core.Repositories
+namespace B2B.Backend.Core.Services
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IService<T> where T : class
     {
         Task<T> GetByIdAsync(int id);
         Task<T> GetAsync(Expression<Func<T, bool>> filter);
-        IQueryable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
-        Task AddAsync(T entity);
+        Task<T> AddAsync(T entity);
         Task AddRangeAsync(IEnumerable<T> entities);
-        void Update(T entity);
-        void Remove(T entity);
-        void RemoveRange(IEnumerable<T> entities);
+        Task UpdateAsync(T entity);
+        Task RemoveAsync(T entity);
+        Task RemoveRangeAsync(IEnumerable<T> entities);
     }
 }
