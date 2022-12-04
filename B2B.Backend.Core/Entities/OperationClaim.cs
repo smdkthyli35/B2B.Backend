@@ -10,6 +10,6 @@ namespace B2B.Backend.Core.Entities
     {
         public string Name { get; set; }
 
-        //public ICollection<UserOperationClaim> UserOperationClaims { get; set; }
+        public ICollection<UserOperationClaim> UserOperationClaims { get; set; }
     }
 }

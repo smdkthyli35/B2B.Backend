@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace B2B.Backend.Core.Entities
 {
-    public class CustomerRelationship
+    public class CustomerRelationship : BaseEntity
     {
         public int CustomerId { get; set; }
         public int PriceListId { get; set; }
