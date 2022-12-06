@@ -6,6 +6,7 @@ using B2B.Backend.Core.UnitOfWorks;
 using B2B.Backend.Repository.Contexts;
 using B2B.Backend.Repository.Repositories;
 using B2B.Backend.Repository.UnitOfWorks;
+using B2B.Backend.Service.Mapping;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Reflection;
@@ -27,6 +28,8 @@ builder.Services.AddDbContext<B2BDbContext>(opt =>
         options.MigrationsAssembly(Assembly.GetAssembly(typeof(B2BDbContext)).GetName().Name);
     });
 });
+
+builder.Services.AddAutoMapper(typeof(GeneralMapping));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
