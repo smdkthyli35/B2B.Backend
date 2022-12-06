@@ -1,3 +1,6 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using B2B.Backend.API.Modules;
 using B2B.Backend.Core.Repositories;
 using B2B.Backend.Core.UnitOfWorks;
 using B2B.Backend.Repository.Contexts;
@@ -27,6 +30,9 @@ builder.Services.AddDbContext<B2BDbContext>(opt =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new AutofacRepoServiceModule()));
 
 var app = builder.Build();
 
