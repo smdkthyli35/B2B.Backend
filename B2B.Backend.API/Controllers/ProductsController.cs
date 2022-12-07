@@ -43,9 +43,9 @@ namespace B2B.Backend.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(ProductDto productDto)
+        public async Task<IActionResult> Update(ProductUpdateDto productUpdateDto)
         {
-            await _productService.UpdateAsync(_mapper.Map<Product>(productDto));
+            await _productService.UpdateAsync(_mapper.Map<Product>(productUpdateDto));
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
