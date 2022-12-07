@@ -22,6 +22,7 @@ namespace B2B.Backend.Service.Mapping
             CreateMap<OrderDto, Order>().ReverseMap();
             CreateMap<PriceListDetailDto, PriceListDetail>().ReverseMap();
             CreateMap<PriceListDto, PriceList>().ReverseMap();
+            CreateMap<PriceList, PriceListUpdateDto>().ReverseMap();
             CreateMap<ProductDto, Product>().ReverseMap();
             CreateMap<Product, ProductUpdateDto>().ReverseMap();
             CreateMap<ProductImageDto, ProductImage>().ReverseMap();
