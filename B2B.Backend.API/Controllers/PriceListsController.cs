@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace B2B.Backend.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class PriceListsController : CustomBaseController
     {
         private readonly IPriceListService _priceListService;
